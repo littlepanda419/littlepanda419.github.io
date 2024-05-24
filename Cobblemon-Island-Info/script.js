@@ -28,14 +28,21 @@ realms.forEach((realm) => {
   realm.lastSpawn.setHours(0, 0, 0, 0);
   realm.nextSpawn.setHours(0, 0, 0, 0);
   switch (realm.name) {
-    case "Sun":
-      realm.lastSpawn.setHours(10, 25);
-      break;
     case "Moon":
+      realm.lastSpawn.setFullYear(2024, 4); 
+      realm.lastSpawn.setDate(24);
+      realm.lastSpawn.setHours(8, 25);
+      realm.lastSpawn.setHours(8, 25);
+      break;
+    case "Sun":
+      realm.lastSpawn.setFullYear(2024, 4); 
+      realm.lastSpawn.setDate(24); 
       realm.lastSpawn.setHours(9, 25);
       break;
     case "Star":
-      realm.lastSpawn.setHours(8, 25);
+      realm.lastSpawn.setFullYear(2024, 4);
+      realm.lastSpawn.setDate(24);
+      realm.lastSpawn.setHours(10, 25);
       break;
   }
 });
