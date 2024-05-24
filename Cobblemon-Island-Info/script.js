@@ -21,6 +21,18 @@ const realms = [
     nextSpawn: new Date(currentTime),
     countdown: 0,
   },
+  {
+    name: "Nether",
+    lastSpawn: new Date(currentTime),
+    nextSpawn: new Date(currentTime),
+    countdown: 0,
+  },
+  {
+    name: "End",
+    lastSpawn: new Date(currentTime),
+    nextSpawn: new Date(currentTime),
+    countdown: 0,
+  },
 ];
 
 // 設定各realm的初始重生時間
@@ -29,20 +41,30 @@ realms.forEach((realm) => {
   realm.nextSpawn.setHours(0, 0, 0, 0);
   switch (realm.name) {
     case "Moon":
-      realm.lastSpawn.setFullYear(2024, 4); 
+      realm.lastSpawn.setFullYear(2024, 4);
       realm.lastSpawn.setDate(24);
       realm.lastSpawn.setHours(8, 25);
       realm.lastSpawn.setHours(8, 25);
       break;
     case "Sun":
-      realm.lastSpawn.setFullYear(2024, 4); 
-      realm.lastSpawn.setDate(24); 
+      realm.lastSpawn.setFullYear(2024, 4);
+      realm.lastSpawn.setDate(24);
       realm.lastSpawn.setHours(9, 25);
       break;
     case "Star":
       realm.lastSpawn.setFullYear(2024, 4);
       realm.lastSpawn.setDate(24);
       realm.lastSpawn.setHours(10, 25);
+      break;
+    case "Nether":
+      realm.lastSpawn.setFullYear(2024, 4);
+      realm.lastSpawn.setDate(24);
+      realm.lastSpawn.setHours(20, 25);
+      break;
+    case "End":
+      realm.lastSpawn.setFullYear(2024, 4);
+      realm.lastSpawn.setDate(24);
+      realm.lastSpawn.setHours(20, 25);
       break;
   }
 });
@@ -83,22 +105,22 @@ function showCountdowns() {
     document.getElementById(
       `${realm.name.toLowerCase()}-last-spawn`
     ).textContent = realm.lastSpawn.toLocaleString("zh-TW", {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true // 使用 12 小時制
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true, // 使用 12 小時制
     });
     document.getElementById(
       `${realm.name.toLowerCase()}-next-spawn`
     ).textContent = realm.nextSpawn.toLocaleString("zh-TW", {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true // 使用 12 小時制
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true, // 使用 12 小時制
     });
 
     if (countdown >= 0) {
