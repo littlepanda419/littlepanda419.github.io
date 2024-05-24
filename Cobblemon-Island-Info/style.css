@@ -35,7 +35,6 @@ th, td {
 .table_star{
     background-color: rgba(242, 245, 49, 0.7)
 }
-<<<<<<< HEAD
 .table_nether{
     background-color: rgba(153, 17, 17, 0.7)
     font-color:white;
@@ -43,8 +42,6 @@ th, td {
 .table_end{
     background-color: rgba(119, 92, 170, 0.7) 
 }
-=======
->>>>>>> e75f922cb903a42508424036ed455c29e1c8fdb9
 /* CSS 樣式 */
 .sidebar {
     position: fixed;
