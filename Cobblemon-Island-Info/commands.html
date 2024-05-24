@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commands</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <button onclick="redirectToMainPage()">神獸重生時間</button>
+      <button onclick="redirectToCommandsPage()">指令介紹</button>
+    </div>
+
+    <h1>Cobblemon Island 伺服器指令介紹</h1>
+
+    <details open>
+      <summary>一般</summary>
+      <table class="table_commands">
+        <thead>
+          <tr>
+            <th class="table_commands_th1">指令</th>
+            <th class="table_commands_th2">描述</th>
+            <th class="table_commands_th3">備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/rewards</td>
+            <td>獎勵系統</td>
+            <td>目前維護中</td>
+          </tr>
+          <tr>
+            <td>/msg [username] [text]</td>
+            <td>私訊玩家訊息</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>/reply</td>
+            <td>快速回覆上面私訊</td>
+            <td>也可以點擊玩家ID回覆</td>
+          </tr>
+          <tr>
+            <td>/kits</td>
+            <td>領取套組獎勵</td>
+            <td>每周刷新 可領取claimtool和pokedex</td>
+          </tr>
+          <tr>
+            <td>/vote</td>
+            <td>投票</td>
+            <td>
+              每天or根據網頁規則刷新<br />可以直接開啟全網頁加入書籤較方便
+            </td>
+          </tr>
+          <tr>
+            <td>/spawn</td>
+            <td>回到出生地</td>
+            <td>同/server hub</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </details>
+
+    <details open>
+      <summary>Claim相關</summary>
+
+      <table class="table_commands">
+        <thead>
+          <tr>
+            <th class="table_commands_th1">指令</th>
+            <th class="table_commands_th2">描述</th>
+            <th class="table_commands_th3">備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/trust [username] [role]</td>
+            <td>站在領地上信任別人<br />給予別人此地相關權限</td>
+            <td>
+              [role]: Accessor, Container, Builder, Manager<br />
+              由左至右分別可以基本進入>開箱子/種地/動物>建造破壞>殺寶可夢(全部權限)
+            </td>
+          </tr>
+          <tr>
+            <td>/claiminspect</td>
+            <td>檢視腳下土地為誰所有</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>/claimtool</td>
+            <td>劃定領地</td>
+            <td>10分鐘+10個 claim block</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </details>
+
+    <details open>
+      <summary>tp相關</summary>
+
+      <table class="table_commands">
+        <thead>
+          <tr>
+            <th class="table_commands_th1">指令</th>
+            <th class="table_commands_th2">描述</th>
+            <th class="table_commands_th3">備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/home [homename]</td>
+            <td>tp回家</td>
+            <td>需先 /sethome 或是可用 /homes 選擇 初始僅有2個home可使用</td>
+          </tr>
+          <tr>
+            <td>/tpa [username]</td>
+            <td>tp到該玩家處，需經過他同意</td>
+            <td>被tp者可以打/tpaccept 或點擊聊天框的accept同意請求</td>
+          </tr>
+          <tr>
+            <td>/back</td>
+            <td>tp 回上次tp來/死亡點</td>
+            <td>可以走到點之後 /home回家/放東西 再用/back快速回去冒險</td>
+          </tr>
+          <tr>
+            <td>/warps</td>
+            <td>開啟ui 可快速傳送</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>/server [place]</td>
+            <td>立刻傳送至該地點/分流</td>
+            <td>
+              [hub, sunrealm, moonrealm, starrealm, nether, end, eventrealm]
+            </td>
+          </tr>
+          <tr>
+            <td>/rtp</td>
+            <td>隨機tp至任意地點</td>
+            <td>冷卻3分鐘</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </details>
+
+    <details open>
+      <summary>寶可夢相關</summary>
+
+      <table class="table_commands">
+        <thead>
+          <tr>
+            <th class="table_commands_th1">指令</th>
+            <th class="table_commands_th2">描述</th>
+            <th class="table_commands_th3">備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/hunts</td>
+            <td>開啟hunts ui 可以狩獵寶可夢</td>
+            <td>
+              難度簡單到難分別為<br />
+              指定寶可夢+指定球/+指定性別/+指定性格/+指定特性
+            </td>
+          </tr>
+          <tr>
+            <td>/pokefishing</td>
+            <td>釣魚系統</td>
+            <td>後面可加 list 目前似乎disable中</td>
+          </tr>
+          <tr>
+            <td>/wondertrade</td>
+            <td>神奇交換<br />隨機交換別人丟上去的寶可夢一隻</td>
+            <td>只能在spawn使用 冷卻X分鐘(待確認)</td>
+          </tr>
+          <tr>
+            <td>/daycare</td>
+            <td>開啟介面 讓兩隻寶可夢瘋狂ii</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>/pokegift [1-6] [username]</td>
+            <td>把第[1-6]的欄位的寶可夢<br />送給[username]</td>
+            <td>同realm才可work</td>
+          </tr>
+          <tr>
+            <td>/pokebuilder</td>
+            <td>
+              寶可夢精進系統<br />可以改IV、EV、性別、球種、閃光、許多設定
+            </td>
+            <td>只可以改變非神獸 只能在spawn使用</td>
+          </tr>
+          <tr>
+            <td>/lastlegend</td>
+            <td>查詢最近出生5隻神獸</td>
+            <td>出生時間一律是25分左右 可以直接左邊選單去神獸重生計時頁面</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </details>
+
+    <details open>
+      <summary>交易相關</summary>
+
+      <table class="table_commands">
+        <thead>
+          <tr>
+            <th class="table_commands_th1">指令</th>
+            <th class="table_commands_th2">描述</th>
+            <th class="table_commands_th3">備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/bal</td>
+            <td>查詢pokedollar</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>/pay [username] [amount]</td>
+            <td>給[username] [amount]塊pokedollar</td>
+            <td>/pay Littlepanda0419 20000</td>
+          </tr>
+          <tr>
+            <td>/shop</td>
+            <td>官方遊戲幣商店</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>/store</td>
+            <td>
+              官方<b><u>課金</u></b
+              >商店
+            </td>
+            <td>
+              <a href="https://store.cobblemonislands.com/"
+                >store.cobblemonislands.com</a
+              >
+            </td>
+          </tr>
+
+          <tr>
+            <td>/gts</td>
+            <td>玩家交易 可以交易道具和寶可夢</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>/gts add pokemon [1~6] [總價]</td>
+            <td>在gts上架 寶可夢須在左邊</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>/gts add item [1~9] [總價]</td>
+            <td>在gts上架 物品須在快捷欄</td>
+            <td>-</td>
+            <!-- Add more rows as needed -->
+          </tr>
+        </tbody>
+      </table>
+    </details>
+    <script src="script.js"></script>
+  </body>
+</html>
