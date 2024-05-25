@@ -36,8 +36,7 @@ th, td {
     background-color: rgba(242, 245, 49, 0.7)
 }
 .table_nether{
-    background-color: rgba(153, 17, 17, 0.7)
-    font-color:white;
+    background-color: rgba(153, 17, 17, 0.5);    
 }
 .table_end{
     background-color: rgba(119, 92, 170, 0.7) 
