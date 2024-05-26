@@ -48,7 +48,7 @@ realms.forEach((realm) => {
     case "Sun":
       realm.lastSpawn.setFullYear(2024, 4);
       realm.lastSpawn.setDate(25);
-      realm.lastSpawn.setHours(20, 40);
+      realm.lastSpawn.setHours(9, 40);
       break;
     case "Star":
       realm.lastSpawn.setFullYear(2024, 4);
