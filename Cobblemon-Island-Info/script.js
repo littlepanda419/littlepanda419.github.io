@@ -42,28 +42,28 @@ realms.forEach((realm) => {
   switch (realm.name) {
     case "Moon":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(26);
-      realm.lastSpawn.setHours(10, 30);
+      realm.lastSpawn.setDate(27);
+      realm.lastSpawn.setHours(21, 40);
       break;
     case "Sun":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(26);
-      realm.lastSpawn.setHours(6, 40);
+      realm.lastSpawn.setDate(27);
+      realm.lastSpawn.setHours(22, 45);
       break;
     case "Star":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(26);
-      realm.lastSpawn.setHours(7, 25);
+      realm.lastSpawn.setDate(27);
+      realm.lastSpawn.setHours(23, 30);
       break;
     case "Nether":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(27);
-      realm.lastSpawn.setHours(20, 5);
+      realm.lastSpawn.setDate(28);
+      realm.lastSpawn.setHours(1, 5);
       break;
     case "End":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(24);
-      realm.lastSpawn.setHours(20, 35);
+      realm.lastSpawn.setDate(27);
+      realm.lastSpawn.setHours(23, 40);
       break;
   }
 });
@@ -73,7 +73,7 @@ function updateSpawnTimes() {
   currentTime.setTime(Date.now());
   realms.forEach((realm) => {
     realm.nextSpawn = new Date(realm.lastSpawn);
-    realm.nextSpawn.setHours(realm.nextSpawn.getHours() + 5);
+    realm.nextSpawn.setHours(realm.nextSpawn.getHours() + 5,realm.nextSpawn.getMinutes() + 1);    
     realm.countdown = Math.floor((realm.nextSpawn - currentTime) / 1000);
     if (realm.countdown < 0) {
       // 若預計剩餘時間為負數，表示已經超過下次重生時間，需要更新重生時間
