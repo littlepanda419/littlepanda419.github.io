@@ -57,7 +57,7 @@ realms.forEach((realm) => {
       break;
     case "Nether":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(28);
+      realm.lastSpawn.setDate(27);
       realm.lastSpawn.setHours(20, 5);
       break;
     case "End":
