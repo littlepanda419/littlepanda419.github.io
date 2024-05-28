@@ -73,18 +73,25 @@ function updateSpawnTimes() {
   currentTime.setTime(Date.now());
   realms.forEach((realm) => {
     realm.nextSpawn = new Date(realm.lastSpawn);
-    realm.nextSpawn.setHours(realm.nextSpawn.getHours() + 5,realm.nextSpawn.getMinutes() + 1);    
+    realm.nextSpawn.setHours(
+      realm.nextSpawn.getHours() + 5,
+      realm.nextSpawn.getMinutes() + 1
+    );
     realm.countdown = Math.floor((realm.nextSpawn - currentTime) / 1000);
     if (realm.countdown < 0) {
       // 若預計剩餘時間為負數，表示已經超過下次重生時間，需要更新重生時間
       const elapsedTime = Math.abs(realm.countdown);
       const spawnInterval = 5 * 60 * 60; // 5 小時的秒數
       const extraSpawns = Math.floor(elapsedTime / spawnInterval);
-      realm.lastSpawn.setHours(
-        realm.lastSpawn.getHours() + (extraSpawns + 1) * 5
-      ); // 更新上次重生時間到正確的時間點
+
       realm.nextSpawn.setHours(
-        realm.nextSpawn.getHours() + (extraSpawns + 1) * 5
+        realm.nextSpawn.getHours() + 5,
+        realm.nextSpawn.getMinutes() + 1
+      ); // 更新上次重生時間到正確的時間點
+
+      realm.nextSpawn.setHours(
+        realm.nextSpawn.getHours() + 5,
+        realm.nextSpawn.getMinutes() + 1
       ); // 更新下次重生時間到正確的時間點
       realm.countdown = Math.floor((realm.nextSpawn - currentTime) / 1000);
     }
