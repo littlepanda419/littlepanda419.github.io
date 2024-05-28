@@ -46,7 +46,7 @@ th, td {
     position: fixed;
     left: 0;
     top: 0;
-    width: 100px;
+    width: 6vw;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -57,7 +57,7 @@ th, td {
     margin-bottom: 10px;
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #6a7ff1;
     color: white;
     border: none;
     border-radius: 5px;
@@ -65,7 +65,7 @@ th, td {
 }
 
 .sidebar button:hover {
-    background-color: #45a049;
+    background-color: #bce942;
 }
 
 summary{
@@ -87,4 +87,21 @@ summary{
 
 .table_commands_th3 {
     width: 50%; /* 第三個表頭的寬度為表格寬度的 30% */
+}
+
+.table_raid {
+    padding-left: 100px;
+    width: 65%; /* 第一個表頭的寬度為表格寬度的 30% */
+}
+
+.table_raids_th1 {
+    width: 30%; /* 第一個表頭的寬度為表格寬度的 30% */
+}
+
+.table_raids_th2 {
+    width: 30%; /* 第二個表頭的寬度為表格寬度的 40% */
+}
+
+.table_raids_th3 {
+    width: 30%; /* 第三個表頭的寬度為表格寬度的 30% */
 }

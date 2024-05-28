@@ -8,30 +8,35 @@ const realms = [
     lastSpawn: new Date(currentTime),
     nextSpawn: new Date(currentTime),
     countdown: 0,
+    next2Spawn: new Date(currentTime),
   },
   {
     name: "Moon",
     lastSpawn: new Date(currentTime),
     nextSpawn: new Date(currentTime),
     countdown: 0,
+    next2Spawn: new Date(currentTime),
   },
   {
     name: "Star",
     lastSpawn: new Date(currentTime),
     nextSpawn: new Date(currentTime),
     countdown: 0,
+    next2Spawn: new Date(currentTime),
   },
   {
     name: "Nether",
     lastSpawn: new Date(currentTime),
     nextSpawn: new Date(currentTime),
     countdown: 0,
+    next2Spawn: new Date(currentTime),
   },
   {
     name: "End",
     lastSpawn: new Date(currentTime),
     nextSpawn: new Date(currentTime),
     countdown: 0,
+    next2Spawn: new Date(currentTime),
   },
 ];
 
@@ -39,6 +44,7 @@ const realms = [
 realms.forEach((realm) => {
   realm.lastSpawn.setHours(0, 0, 0, 0);
   realm.nextSpawn.setHours(0, 0, 0, 0);
+  realm.next2Spawn.setHours(0, 0, 0, 0);
   switch (realm.name) {
     case "Moon":
       realm.lastSpawn.setFullYear(2024, 4);
@@ -73,10 +79,11 @@ function updateSpawnTimes() {
   currentTime.setTime(Date.now());
   realms.forEach((realm) => {
     realm.nextSpawn = new Date(realm.lastSpawn);
-    realm.nextSpawn.setHours(
-      realm.nextSpawn.getHours() + 5,
-      realm.nextSpawn.getMinutes() + 1
-    );
+    realm.next2Spawn = new Date(realm.lastSpawn);
+
+    realm.nextSpawn.setHours(realm.nextSpawn.getHours() + 5);
+    realm.next2Spawn.setHours(realm.nextSpawn.getHours() + 5);
+
     realm.countdown = Math.floor((realm.nextSpawn - currentTime) / 1000);
     if (realm.countdown < 0) {
       // 若預計剩餘時間為負數，表示已經超過下次重生時間，需要更新重生時間
@@ -84,15 +91,16 @@ function updateSpawnTimes() {
       const spawnInterval = 5 * 60 * 60; // 5 小時的秒數
       const extraSpawns = Math.floor(elapsedTime / spawnInterval);
 
-      realm.nextSpawn.setHours(
-        realm.nextSpawn.getHours() + 5,
-        realm.nextSpawn.getMinutes() + 1
+      realm.lastSpawn.setHours(
+        realm.lastSpawn.getHours() + (extraSpawns + 1) * 5
       ); // 更新上次重生時間到正確的時間點
-
       realm.nextSpawn.setHours(
-        realm.nextSpawn.getHours() + 5,
-        realm.nextSpawn.getMinutes() + 1
+        realm.nextSpawn.getHours() + (extraSpawns + 1) * 5
       ); // 更新下次重生時間到正確的時間點
+      realm.next2Spawn.setHours(
+        realm.next2Spawn.getHours() + (extraSpawns + 1) * 5
+      ); // 更新下次重生時間到正確的時間點
+
       realm.countdown = Math.floor((realm.nextSpawn - currentTime) / 1000);
     }
   });
@@ -108,6 +116,7 @@ function showCountdowns() {
     const formattedCountdown = `${hours.toString().padStart(2, "0")}:${minutes
       .toString()
       .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
     document.getElementById(
       `${realm.name.toLowerCase()}-last-spawn`
     ).textContent = realm.lastSpawn.toLocaleString("zh-TW", {
@@ -118,9 +127,21 @@ function showCountdowns() {
       minute: "numeric",
       hour12: true, // 使用 12 小時制
     });
+
     document.getElementById(
       `${realm.name.toLowerCase()}-next-spawn`
     ).textContent = realm.nextSpawn.toLocaleString("zh-TW", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true, // 使用 12 小時制
+    });
+
+    document.getElementById(
+      `${realm.name.toLowerCase()}-next2-spawn`
+    ).textContent = realm.next2Spawn.toLocaleString("zh-TW", {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
@@ -156,6 +177,9 @@ function redirectToCommandsPage() {
 
 function redirectToMainPage() {
   window.location.href = "index.html";
+}
+function redirectToRaidsPage() {
+  window.location.href = "raids.html";
 }
 
 function toggleTable() {
