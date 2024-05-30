@@ -48,28 +48,28 @@ realms.forEach((realm) => {
   switch (realm.name) {
     case "Moon":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(27);
-      realm.lastSpawn.setHours(21, 40);
+      realm.lastSpawn.setDate(30);
+      realm.lastSpawn.setHours(14, 45);
       break;
     case "Sun":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(27);
-      realm.lastSpawn.setHours(22, 45);
+      realm.lastSpawn.setDate(30);
+      realm.lastSpawn.setHours(14, 50);
       break;
     case "Star":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(28);
-      realm.lastSpawn.setHours(17, 15);
+      realm.lastSpawn.setDate(30);
+      realm.lastSpawn.setHours(14, 40);
       break;
     case "Nether":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(28);
-      realm.lastSpawn.setHours(1, 5);
+      realm.lastSpawn.setDate(30);
+      realm.lastSpawn.setHours(16, 20);
       break;
     case "End":
       realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(27);
-      realm.lastSpawn.setHours(23, 40);
+      realm.lastSpawn.setDate(30);
+      realm.lastSpawn.setHours(17, 55);
       break;
   }
 });
