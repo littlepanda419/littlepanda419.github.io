@@ -69,7 +69,7 @@ realms.forEach((realm) => {
     case "End":
       realm.lastSpawn.setFullYear(2024, 4);
       realm.lastSpawn.setDate(30);
-      realm.lastSpawn.setHours(17, 55);
+      realm.lastSpawn.setHours(16, 55);
       break;
   }
 });
