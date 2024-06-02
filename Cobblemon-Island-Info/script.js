@@ -4,14 +4,14 @@ const currentTime = new Date();
 // 定義每個realm的重生時間，以及下一次重生時間
 const realms = [
   {
-    name: "Sun",
+    name: "Moon",
     lastSpawn: new Date(currentTime),
     nextSpawn: new Date(currentTime),
     countdown: 0,
     next2Spawn: new Date(currentTime),
   },
   {
-    name: "Moon",
+    name: "Sun",
     lastSpawn: new Date(currentTime),
     nextSpawn: new Date(currentTime),
     countdown: 0,
