@@ -40,39 +40,15 @@ const realms = [
   },
 ];
 
-// 設定各realm的初始重生時間
-realms.forEach((realm) => {
-  realm.lastSpawn.setHours(0, 0, 0, 0);
-  realm.nextSpawn.setHours(0, 0, 0, 0);
-  realm.next2Spawn.setHours(0, 0, 0, 0);
-  switch (realm.name) {
-    case "Moon":
-      realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(30);
-      realm.lastSpawn.setHours(14, 45);
-      break;
-    case "Sun":
-      realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(30);
-      realm.lastSpawn.setHours(15, 50);
-      break;
-    case "Star":
-      realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(30);
-      realm.lastSpawn.setHours(14, 40);
-      break;
-    case "Nether":
-      realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(30);
-      realm.lastSpawn.setHours(16, 20);
-      break;
-    case "End":
-      realm.lastSpawn.setFullYear(2024, 4);
-      realm.lastSpawn.setDate(30);
-      realm.lastSpawn.setHours(16, 55);
-      break;
-  }
-});
+fetch('realmsSpawnTimeData.json')
+  .then(response => response.json())
+  .then(data => {
+    // 使用從 JSON 文件中獲取的數據來設定初始重生時間
+    realms.forEach((realm, index) => {
+      realm.lastSpawn = new Date(data.realms[index].lastSpawn);
+    });
+  })
+  .catch(error => console.error('Error fetching realms data:', error));
 
 // 更新下次重生時間和預計時間
 function updateSpawnTimes() {
