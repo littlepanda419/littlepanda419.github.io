@@ -1,25 +1,25 @@
 {
-    "realms": [
-      {
-        "name": "Moon",
-        "lastSpawn": "2024-06-02T12:50:00"
-      },
-      {
-        "name": "Sun",
-        "lastSpawn": "2024-06-05T14:10:00"
-      },
-      {
-        "name": "Star",
-        "lastSpawn": "2024-06-05T11:25:00"
-      },
-      {
-        "name": "Nether",
-        "lastSpawn": "2024-06-05T13:05:00"
-      },
-      {
-        "name": "End",
-        "lastSpawn": "2024-06-05T13:05:00"
-      }
-    ]
-  }
-  
+  "realms": [
+    {
+      "name": "Moon",
+      "lastSpawn": "2024-06-13T19:20:00"
+    },
+    {
+      "name": "Sun",
+      "lastSpawn": "2024-06-13T16:05:00"
+    },
+    {
+      "name": "Star",
+      "lastSpawn": "2024-06-13T14:45:00"
+    },
+    {
+      "name": "Nether",
+      "lastSpawn": "2024-06-13T16:25:00"
+    },
+    {
+      "name": "End",
+      "lastSpawn": "2024-06-13T16:25:00"
+    }
+  ],
+  "lastUpdateDate": "2024-06-13"
+}

@@ -47,6 +47,12 @@ fetch('realmsSpawnTimeData.json')
     realms.forEach((realm, index) => {
       realm.lastSpawn = new Date(data.realms[index].lastSpawn);
     });
+    
+    const lastUpdateDate = data.lastUpdateDate;
+    // 將值設置到 HTML 元素中
+    const lastUpdateDateElement = document.getElementById('last-update-date');
+    lastUpdateDateElement.textContent = lastUpdateDate;
+
   })
   .catch(error => console.error('Error fetching realms data:', error));
 
@@ -141,6 +147,7 @@ function showCountdowns() {
 // 更新下次重生時間和顯示倒數計時
 updateSpawnTimes();
 showCountdowns();
+
 setInterval(() => {
   currentTime.setTime(currentTime.getTime() + 1000);
   updateSpawnTimes();
